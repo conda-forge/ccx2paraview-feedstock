@@ -1,18 +1,18 @@
 {% set name = "ccx2paraview" %}
-{% set version = "3.1.0" %}
+{% set version = "3.2.0" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/ccx2paraview-{{ version }}.tar.gz
-  sha256: 304738b12effca3ac43ed7cc5852567eb69ae09116ff454d87a762e288e140f0
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/ccx2paraview-{{ version }}.tar.gz
+  sha256: c9f0c8d0fadd7de9a30be1b38ff53ecede49a87659e32b67ba32230d9dafd600
 
 build:
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
-  number: 2
+  number: 0
   entry_points:
     - ccx2paraview = ccx2paraview.ccx2paraview:main
 
