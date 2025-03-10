@@ -1,6 +1,6 @@
 {% set name = "ccx2paraview" %}
 {% set version = "3.2.0" %}
-{% set python_min = "3.10" %}
+{% set python_min = "3.9" %}
 
 package:
   name: {{ name|lower }}
@@ -13,7 +13,7 @@ source:
 build:
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
-  number: 1
+  number: 2
   entry_points:
     - ccx2paraview = ccx2paraview.cli:main
     - ccxToVTK = ccx2paraview.cli:ccx_to_vtk
